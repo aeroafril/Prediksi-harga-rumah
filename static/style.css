@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    background:#23262f;
+}
+body{
+    min-height:100vh;
+    background:#23262f;
+    color:#f1f1f1;
+    font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+    line-height:1.6;
+}
+.container{
+    width:100%;
+    padding:64px 8%;
+}
+h2{
+    font-size:2.2rem;
+    font-weight:600;
+    line-height:1.2;
+    max-width:520px;
+    padding-left:18px;
+    border-left:4px solid #e8a23a;
+    margin-bottom:48px;
+}
+form{
+    width:100%;
+}
+.formColumns{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    column-gap:48px;
+    row-gap:6px;
+}
+label{
+    font-size:0.85rem;
+    color:#aab0bd;
+    letter-spacing:0.5px;
+    margin-top:18px;
+}
+input{
+    width:100%;
+    padding:12px 0;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #424757;
+    color:#ffffff;
+    font-size:1rem;
+    font-family:inherit;
+    outline:none;
+    transition:border-color 0.2s;
+}
+input::placeholder{
+    color:#6b7285;
+}
+input:focus{
+    border-bottom-color:#e8a23a;
+}
+.buttonGroup{
+    display:flex;
+    gap:16px;
+    margin-top:48px;
+}
+button{
+    padding:14px 32px;
+    border-radius:999px;
+    font-size:0.9rem;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    transition:background 0.2s,color 0.2s,border-color 0.2s;
+}
+.submit{
+    background:#e8a23a;
+    color:#23262f;
+    border:1px solid #e8a23a;
+}
+.submit:hover{
+    background:#f2b457;
+    border-color:#f2b457;
+}
+.reset{
+    background:transparent;
+    color:#f1f1f1;
+    border:1px solid #424757;
+}
+.reset:hover{
+    border-color:#e8a23a;
+    color:#e8a23a;
+}
+#result{
+    margin-top:40px;
+    padding-top:24px;
+    border-top:1px solid #424757;
+    font-size:1.5rem;
+    font-weight:600;
+    color:#e8a23a;
+}
+#result:empty{
+    display:none;
+}
+@media (max-width:768px){
+    .container{
+        padding:48px 6%;
+    }
+    h2{
+        font-size:1.8rem;
+        margin-bottom:36px;
+    }
+    .formColumns{
+        grid-template-columns:1fr;
+    }
+    .buttonGroup{
+        margin-top:36px;
+    }
+}
+@media (max-width:480px){
+    .container{
+        padding:32px 5%;
+    }
+    h2{
+        font-size:1.5rem;
+        padding-left:14px;
+        margin-bottom:28px;
+    }
+    label{
+        font-size:0.8rem;
+    }
+    input{
+        font-size:0.95rem;
+    }
+    .buttonGroup{
+        flex-direction:column;
+        gap:12px;
+    }
+    button{
+        width:100%;
+    }
+    #result{
+        font-size:1.2rem;
+    }
+}
