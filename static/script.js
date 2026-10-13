@@ -24,8 +24,16 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         if(!response.ok) throw new Error(`Server error: ${response.status}`);
 
         const data = await response.json();
+
+        const nilai = Math.round(data.hasil_prediksi) * 1000000;
+
+        const rupiah = new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 2
+        }).format(nilai);
         
-        document.getElementById('result').innerText = "Hasil Prediksi: " + data.hasil_prediksi.toLocaleString('id-ID');
+        document.getElementById('result').innerText = "Hasil Prediksi: " + rupiah;
     }catch(error){
         console.error(`Terjadi kesalahan: ${error}`);
         alert('Gagal terhubung ke server');
